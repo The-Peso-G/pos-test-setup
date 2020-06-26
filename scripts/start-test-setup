@@ -2,9 +2,11 @@
 
 # Exit on undefined variables.
 set -u
+set -e
+set -x
 
-PARITY=$1
-
-for i in 1 2 3; do
-    $PARITY --config ./config/node${i}.toml > ./parity-data/node${i}/log 2>&1 &
+OPENETHEREUM=$1
+for i in $(seq 0 6); do
+    "$OPENETHEREUM" --config "./config/node${i}.toml" >> "./data/node${i}/log" 2>&1 &
+    node ./scripts/getReservedPeer.js "$i"
 done

@@ -1,3 +1,4 @@
-[submodule "pos-contracts"]
-	path = pos-contracts
-	url = https://github.com/poanetwork/pos-contracts
+[submodule "posdao-contracts"]
+	path = posdao-contracts
+	url = https://github.com/poanetwork/posdao-contracts
+	branch = master
